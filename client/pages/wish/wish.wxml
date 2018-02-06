@@ -1,0 +1,3 @@
+<view class="container card-list">
+  <card class="card-item" wx:for="{{[1,2,3]}}" wx:key="*this" wx:for-item="card"/>
+</view>

@@ -1,0 +1,4 @@
+<view class="c-card">
+  <progress percent="80" active />
+</view>
+<slot></slot>

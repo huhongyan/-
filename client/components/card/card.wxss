@@ -1,0 +1,4 @@
+.c-card {
+  color: red;
+  width: 100vw;
+}
