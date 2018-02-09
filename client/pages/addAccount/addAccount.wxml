@@ -1,0 +1,31 @@
+<view class="container">
+  <form class='account-form' bindsubmit='formsubmit'>
+    <radio-group class='form-switch' name="type" data-key="type" bindchange="bindChange">
+      <label class='{{!!type ? "form-switch-checked" : ""}}'>
+        <radio value='1' checked/>收入</label>
+      <label class='{{!type ? "form-switch-checked" : ""}}'>
+        <radio value='0' />支出 </label>
+    </radio-group>
+    <view class="section icon-account">
+      <view class="section-title">金额</view>
+      <input name="account" type='digit' placeholder="0.00" />
+    </view>
+    <view class="section icon-category">
+      <view class="section-title">类别</view>
+      <picker mode="selector" name="category" range-key="name" data-key="categoryIndex" bindchange="bindChange" value="{{categorys[categoryIndex].name}}" range="{{categorys}}">
+        <view class="picker">{{categorys[categoryIndex].name}}</view>
+      </picker>
+    </view>
+    <view class="section icon-date">
+      <view class="section-title">日期</view>
+      <picker mode="date" fields="day" data-key="date" bindchange="bindChange" name="date" value="{{date}}">
+        <view class="picker">{{date}}</view>
+      </picker>
+    </view>
+    <view class="section icon-describe">
+      <view class="section-title">说明</view>
+      <textarea name="describe" value="{{describe}}" placeholder="可添加备注" style='height: 200rpx;'></textarea>
+    </view>
+    <button class='form-submit' formType="submit">确定</button>
+  </form>
+</view>

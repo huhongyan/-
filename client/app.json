@@ -1,12 +1,13 @@
 {
-  "pages":[
-    "pages/wish/wish",
+  "pages": [
     "pages/account/account",
+    "pages/wish/wish",
     "pages/index/index",
+    "pages/addAccount/addAccount",
     "pages/addCgi/addCgi"
   ],
-  "window":{
-    "backgroundColor":"#F6F6F6",
+  "window": {
+    "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1296db",
     "navigationBarTitleText": "学习小程序",
@@ -14,21 +15,21 @@
   },
   "tabBar": {
     "position": "bottom",
-    "backgroundColor": "#FAFAFA",
+    "backgroundColor": "#FFF",
     "color": "#2c2c2c",
     "selectedColor": "#1296db",
     "list": [
-      {
-        "pagePath": "pages/wish/wish",
-        "text": "心愿卡",
-        "iconPath": "assets/card.png",
-        "selectedIconPath": "assets/card_sel.png"
-      },
       {
         "pagePath": "pages/account/account",
         "text": "账册",
         "iconPath": "assets/book.png",
         "selectedIconPath": "assets/book_sel.png"
+      },
+      {
+        "pagePath": "pages/wish/wish",
+        "text": "心愿卡",
+        "iconPath": "assets/card.png",
+        "selectedIconPath": "assets/card_sel.png"
       }
     ]
   },

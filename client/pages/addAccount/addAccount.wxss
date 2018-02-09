@@ -1,0 +1,64 @@
+.form-switch {
+  display: flex;
+  width: 340rpx;
+  height: 80rpx;
+  margin: 32rpx auto;
+  padding: 8rpx;
+  border: 1rpx solid #4f94cd;
+  background-color: #63b8ff;
+  color: #f1f1f1;
+  border-radius: 46rpx;
+  line-height: 58rpx;
+  box-sizing: border-box;
+}
+
+.form-switch label {
+  flex: 1;
+  border-radius: 40rpx;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.form-switch-checked {
+  background-color: #36648b;
+  color: #fff;
+}
+
+.form-switch radio {
+  position: absolute;
+  opacity: 0;
+}
+
+.account-form .section {
+  display: flex;
+  background-color: #fff;
+  margin-bottom: 2rpx;
+  padding: 0 10rpx 0 80rpx;
+  background-size: 44rpx;
+  background-position: 20rpx 20rpx;
+}
+
+.section-title {
+  color: #515151;
+  margin-right: 30rpx;
+   line-height: 84rpx;
+}
+
+.section input, .section picker, .section textarea {
+  flex: 1;
+}
+
+.section input, .section picker {
+  height: 84rpx;
+  line-height: 84rpx;
+}
+
+.section textarea {
+  padding-top: 26rpx; 
+}
+
+.form-submit {
+  margin: 40rpx 80rpx;
+  background-color: #1296db;
+  color: #fff;
+}

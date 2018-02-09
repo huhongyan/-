@@ -1,6 +1,38 @@
 <!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:key="*this" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<view class="container account">
+  <view class='account-header'>
+    <image class="account-header-bg" src="../../assets/header_bg.jpg" background-size="cover"></image>
+    <view class="userinfo">
+      <image class="userinfo-avatar" src="{{logged ? userInfo.avatarUrl : '../../assets/user-unlogin.png'}}" background-size="cover"></image>
+      <view class='account-number txt-p'>
+        <text class='p-item userinfo-nickname'>{{logged ? userInfo.nickName : '点击登录'}}</text>
+        <text class='p-item' wx:if="{{logged}}"><text class='fs-18'>100.00</text> 元</text>
+      </view>
+      <button class='btn-userinfo' wx:if="{{!logged && canIUse}}" open-type="getUserInfo" bindgetuserinfo="login"> 获取头像昵称 </button>
+    </view>
+  </view>
+  <view class='c-content'>
+    <view class='account-tab'>
+      <view class='txt-p tab-item icon-balance'>
+        <text class='p-item fc-gray'>可用金额（未关联心愿卡的金额）</text>
+        <text class='p-item fs-16'>80.00</text>
+      </view>
+    </view>
+    <view class='account-tab'>
+      <view class='txt-p tab-item icon-defray'>
+        <text class='p-item fc-gray'>本月支出</text>
+        <text class='p-item fs-16'>-20.00</text>
+      </view>
+      <view class='txt-p tab-item icon-income'>
+        <text class='p-item fc-gray'>本月收入</text>
+        <text class='p-item fs-16'> 120.00</text>
+      </view>
+    </view>
+  </view>
+  <view class='c-footer'>
+    <navigator url="../addAccount/addAccount" wx:if="{{logged}}" open-type="navigate" class="add-account">
+      <text class='fc-gray fs-12'>记一笔</text>
+    </navigator>
+    <button wx:else class='add-account fc-gray fs-12' bindtap="showTip">记一笔</button>
+  </view>
 </view>
