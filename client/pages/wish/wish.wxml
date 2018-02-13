@@ -1,3 +1,4 @@
-<view class="container card-list">
-  <card class="card-item" wx:for="{{[1,2,3]}}" wx:key="*this" wx:for-item="card"/>
-</view>
+<scroll-view class="card-list" scroll-y>
+  <card class="card-item" wx:for="{{cards}}" wx:key="id" wx:for-item="card" card="{{card}}" />
+</scroll-view>
+<navigator url="../addWish/addWish" open-type="navigate" class="icon-add add-wish"></navigator>

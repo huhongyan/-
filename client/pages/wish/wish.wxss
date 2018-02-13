@@ -1,5 +1,24 @@
 .card-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+  height: 100vh;
+  font-size: 28rpx;
+}
+
+.card-item {
+  display: block;
+  width: 670rpx;
+  height: 425rpx;
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.add-wish {
+  position: fixed;
+  bottom: 20rpx;
+  right: 20rpx;
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 50%;
+  background-position: top;
+  background-size: 128rpx 128rpx;
 }

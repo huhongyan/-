@@ -31,9 +31,9 @@
     </navigator>
   </view>
   <view class='c-footer'>
-    <navigator url="../addAccount/addAccount" wx:if="{{logged}}" open-type="navigate" class="add-account">
+    <navigator url="../addAccount/addAccount" wx:if="{{logged}}" open-type="navigate" class="icon-add add-account">
       <text class='fc-gray fs-12'>记一笔</text>
     </navigator>
-    <button wx:else class='add-account fc-gray fs-12' bindtap="showTip">记一笔</button>
+    <button wx:else class='icon-add add-account fc-gray fs-12' bindtap="showTip">记一笔</button>
   </view>
 </view>

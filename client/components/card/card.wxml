@@ -1,4 +1,11 @@
 <view class="c-card">
-  <progress percent="80" active />
+  <view class='card-bg' style="background-image: url({{card.imgUrl}}"></view>
+  <view class='card-cnt'>
+    <view class='cnt-header'>
+      <view class='card-title'>{{card.title}}</view>
+      <view>{{card.account}}/{{card.total}}</view>
+    </view>
+    <progress percent="{{(card.account/card.total)*100}}" active active-mode="forwards" />
+    <view class='card-desc'>{{card.describe}}</view>
+  </view>
 </view>
-<slot></slot>
