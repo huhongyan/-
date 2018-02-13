@@ -38,7 +38,9 @@ page {
 .fc-gray{
   color: #666
 }
-
+.fc-red{
+  color: #CD2626
+}
 
 /*
  icon

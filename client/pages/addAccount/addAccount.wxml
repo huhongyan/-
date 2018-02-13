@@ -1,6 +1,6 @@
 <view class="container">
   <form class='account-form' bindsubmit='formsubmit'>
-    <radio-group class='form-switch' name="type" data-key="type" bindchange="bindChange">
+    <radio-group class='form-switch' name="type" data-key="type" bindchange="switchTypeChange">
       <label class='{{!!type ? "form-switch-checked" : ""}}'>
         <radio value='1' checked/>收入</label>
       <label class='{{!type ? "form-switch-checked" : ""}}'>
@@ -8,7 +8,7 @@
     </radio-group>
     <view class="section icon-account">
       <view class="section-title">金额</view>
-      <input name="account" type='digit' placeholder="0.00" />
+      <input name="account" type='digit' placeholder="0.00" maxlength="11" />
     </view>
     <view class="section icon-category">
       <view class="section-title">类别</view>

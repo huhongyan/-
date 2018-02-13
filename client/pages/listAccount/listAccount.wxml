@@ -1,0 +1,55 @@
+<!--pages/listAccount/listAccount.wxml-->
+<wxs module="m1">
+  module.exports.format = function(date) {
+    var arr = date.match(getRegExp('\d+', 'g'))
+    return [arr[0], '年', arr[1], '月'].join(' ')
+  };
+</wxs>
+<wxs module="util" src="../../util.wxs"></wxs>
+<view class='container list'>
+  <view class="c-header">
+    <picker mode="date" value="{{queryDate}}" fields="month" bindchange="bindchangeTime">
+      <view class="picker">{{m1.format(queryDate)}}</view>
+    </picker>
+    <text>当月结余：{{util.formatMoney(total)}} 元</text>
+  </view>
+  <scroll-view class='c-content' scroll-y scroll-top="100">
+    <view class='scroll-item scroll-header'>
+      <view class='item-cnt'>
+        <view class='item-30'>
+          类别
+        </view>
+        <view class='item-30'>
+          金额
+        </view>
+        <view class='item-40'>
+          日期
+        </view>
+      </view>
+    </view>
+    <view wx:if='{{!list.length || querying}}' style='padding-top: 80rpx; text-align: center;'>
+      {{querying ? '正在查询，请稍等~' : '—— 暂无数据 ——'}}
+    </view>
+    <block wx:else>
+      <view wx:for="{{list}}" class='scroll-item{{!!(index%2) ? " item-even" : ""}}'>
+        <view class='item-cnt'>
+          <view class='item-30{{item.type == 1 ? " fc-red" : ""}}'>
+            {{item.category}}
+          </view>
+          <view class='item-30'>
+            {{item.type == 1 ? '' : '-'}}{{util.formatMoney(item.account)}}
+          </view>
+          <view class='item-40'>
+            {{item.date}}
+          </view>
+        </view>
+        <view class='item-des'>{{item.describe}}</view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="c-footer">
+    合计：
+    <text class='f-income'>收入 {{util.formatMoney(income)}} 元</text>
+    <text class='f-defray' style='margin-left: 80rpx;'>支出 {{util.formatMoney(defray)}} 元</text>
+  </view>
+</view>

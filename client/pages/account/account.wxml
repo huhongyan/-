@@ -1,4 +1,5 @@
 <!--logs.wxml-->
+<wxs module="util" src="../../util.wxs"></wxs>
 <view class="container account">
   <view class='account-header'>
     <image class="account-header-bg" src="../../assets/header_bg.jpg" background-size="cover"></image>
@@ -6,7 +7,7 @@
       <image class="userinfo-avatar" src="{{logged ? userInfo.avatarUrl : '../../assets/user-unlogin.png'}}" background-size="cover"></image>
       <view class='account-number txt-p'>
         <text class='p-item userinfo-nickname'>{{logged ? userInfo.nickName : '点击登录'}}</text>
-        <text class='p-item' wx:if="{{logged}}"><text class='fs-18'>100.00</text> 元</text>
+        <text class='p-item' wx:if="{{logged}}"><text class='fs-18'>{{total}}</text> 元</text>
       </view>
       <button class='btn-userinfo' wx:if="{{!logged && canIUse}}" open-type="getUserInfo" bindgetuserinfo="login"> 获取头像昵称 </button>
     </view>
@@ -15,19 +16,19 @@
     <view class='account-tab'>
       <view class='txt-p tab-item icon-balance'>
         <text class='p-item fc-gray'>可用金额（未关联心愿卡的金额）</text>
-        <text class='p-item fs-16'>80.00</text>
+        <text class='p-item fs-16'>{{util.formatMoney(account)}}</text>
       </view>
     </view>
-    <view class='account-tab'>
-      <view class='txt-p tab-item icon-defray'>
-        <text class='p-item fc-gray'>本月支出</text>
-        <text class='p-item fs-16'>-20.00</text>
-      </view>
+    <navigator class='account-tab' url='../listAccount/listAccount'>
       <view class='txt-p tab-item icon-income'>
         <text class='p-item fc-gray'>本月收入</text>
-        <text class='p-item fs-16'> 120.00</text>
+        <text class='p-item fs-16'>{{util.formatMoney(income)}}</text>
       </view>
-    </view>
+       <view class='txt-p tab-item icon-defray'>
+        <text class='p-item fc-gray'>本月支出</text>
+        <text class='p-item fs-16'>{{util.formatMoney(defray)}}</text>
+      </view>
+    </navigator>
   </view>
   <view class='c-footer'>
     <navigator url="../addAccount/addAccount" wx:if="{{logged}}" open-type="navigate" class="add-account">

@@ -2,15 +2,14 @@
   "pages": [
     "pages/account/account",
     "pages/wish/wish",
-    "pages/index/index",
     "pages/addAccount/addAccount",
-    "pages/addCgi/addCgi"
+    "pages/listAccount/listAccount"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1296db",
-    "navigationBarTitleText": "学习小程序",
+    "navigationBarTitleText": "账册",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {

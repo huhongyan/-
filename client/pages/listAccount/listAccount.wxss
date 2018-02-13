@@ -1,0 +1,56 @@
+/* pages/listAccount/listAccount.wxss */
+
+.c-header {
+
+  background-color: #1296db;
+  color: #fff;
+  display: flex;
+  padding: 20rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.picker {
+  border: 1rpx solid #fff;
+  padding: 16rpx 48rpx 16rpx 20rpx;
+  border-radius: 10rpx;
+}
+
+.picker::after {
+  content: '';
+  position: absolute;
+  margin-top: 14rpx;
+  margin-left: 14rpx;
+  border-top: 10rpx solid #fff;
+  border-bottom-width: 0;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+}
+.scroll-item{
+  padding: 16rpx 20rpx;
+  /* line-height: 32rpx; */
+  background-color: #fff
+}
+.item-even{
+  background-color: #F0FFF0;
+}
+.scroll-header{
+  background-color: #63b8ff;
+  color: #fff;
+}
+.item-cnt{
+  display: flex;
+
+}
+.item-30{
+  width: 30%;
+}
+.item-40{
+  width: 40%;
+}
+.c-footer{
+    background-color: #63b8ff;
+      color: #fff;
+      line-height:1.6em;
+      padding: 20rpx;
+}

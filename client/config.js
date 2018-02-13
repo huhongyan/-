@@ -24,7 +24,7 @@ var config = {
         uploadUrl: `${host}/weapp/upload`,
 
         // 新增一条账单流水
-        addAccountUrl: `${host}/weapp/account`,
+        accountUrl: `${host}/weapp/account`,
     }
 };
 

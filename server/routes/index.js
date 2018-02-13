@@ -33,6 +33,9 @@ router.get('/message', controllers.message.get)
 router.post('/message', controllers.message.post)
 
 
-router.get('/account', controllers.account.add)
+router.post('/account/add', validationMiddleware, controllers.account.add)
+router.post('/account/getList', validationMiddleware, controllers.account.getList)
+router.post('/account/getAccount', validationMiddleware, controllers.account.getTotal)
+router.post('/account/getCategorys', controllers.account.getCategorys)
 
 module.exports = router

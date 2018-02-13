@@ -11,16 +11,16 @@ App({
    * 用户登录(调出授权弹框)
    * 登录成功之后，将用户信息存放到globalData中
    * callback回调，用于其他page调用登录之后做处理
+   * isDefault 是否默认登录，这时候，不展示提示
    */
-  login: function (callback) {
-    qcloud.setLoginUrl(config.service.loginUrl);
-    util.showBusy('正在登录')
+  login: function (callback, isDefault) {
+    !isDefault && util.showBusy('正在登录')
     var that = this;
     // 调用登录接口
     qcloud.login({
       success(result) {
         if (result) {
-          util.showSuccess('登录成功');
+          !isDefault && util.showSuccess('登录成功');
           that.globalData.userInfo = result;
           callback && callback();
         } else {
@@ -29,7 +29,7 @@ App({
             url: config.service.requestUrl,
             login: true,
             success(result) {
-              util.showSuccess('登录成功')
+              !isDefault && util.showSuccess('登录成功')
               that.globalData.userInfo = result.data.data;
               callback && callback();
             },
@@ -52,6 +52,7 @@ App({
     })
   },
   onLaunch: function () {
+    qcloud.setLoginUrl(config.service.loginUrl);
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -65,7 +66,7 @@ App({
                 this.userInfoReadyCallback()
               }
             }
-          )
+          , true)
         }
       }
     })
