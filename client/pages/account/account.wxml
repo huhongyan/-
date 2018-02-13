@@ -19,7 +19,7 @@
         <text class='p-item fs-16'>{{util.formatMoney(account)}}</text>
       </view>
     </view>
-    <navigator class='account-tab' url='../listAccount/listAccount'>
+    <navigator class='account-tab' hover-class="none" url='../listAccount/listAccount'>
       <view class='txt-p tab-item icon-income'>
         <text class='p-item fc-gray'>本月收入</text>
         <text class='p-item fs-16'>{{util.formatMoney(income)}}</text>
