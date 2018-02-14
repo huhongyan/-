@@ -76,7 +76,6 @@ border: none;
   background-position: top;
   background-size: 128rpx 128rpx;
   padding-top: 118rpx;
+  line-height: 48rpx;
   text-align: center;
-  line-height: 40rpx;
-  vertical-align: bottom;
 }

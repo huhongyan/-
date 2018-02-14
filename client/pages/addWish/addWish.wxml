@@ -1,2 +1,29 @@
 <!--pages/addWish/addWish.wxml-->
-<text>pages/addWish/addWish.wxml</text>
+<view class="container">
+  <form class='wish-form' bindsubmit='formsubmit'>
+    <view class="section">
+      <view class='s-title'>标题*</view>
+      <input name="title" type='digit' placeholder="心愿标题" maxlength="11" />
+    </view>
+    <view class="section">
+      <view class='s-title'>所需金额*</view>
+      <input name="total" type='digit' placeholder="0.00" maxlength="11" />
+    </view>
+    <view class="section">
+      <view class='s-title'>描述</view>
+      <textarea name="describe" value="{{describe}}" placeholder="心愿描述" style='height: 200rpx;'></textarea>
+    </view>
+    <view class="section uploader">
+      <view class='s-title'>背景图片</view>
+      <view class="uploader-text" bindtap="doUpload">
+        <text>点击上传背景图片</text>
+      </view>
+      <view class="uploader-container" wx:if="{{imgUrl}}">
+        <view class='img-cnt'>
+          <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+        </view>
+      </view>
+    </view>
+    <button class='form-submit' formType="submit">确定</button>
+  </form>
+</view>

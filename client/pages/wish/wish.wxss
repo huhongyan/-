@@ -15,10 +15,9 @@
 .add-wish {
   position: fixed;
   bottom: 20rpx;
-  right: 20rpx;
+  right: 40rpx;
   height: 120rpx;
   width: 120rpx;
-  border-radius: 50%;
-  background-position: top;
-  background-size: 128rpx 128rpx;
+  background-position: center;
+  background-size: cover;
 }

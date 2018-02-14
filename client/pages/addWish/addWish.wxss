@@ -1,1 +1,51 @@
 /* pages/addWish/addWish.wxss */
+.section .s-title {
+  padding: 20rpx 20rpx 10rpx 40rpx;
+}
+
+.section input, .section textarea {
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  padding: 10rpx 20rpx 10rpx 40rpx;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  line-height: 76rpx;
+}
+
+.uploader {
+  transition: all 300ms ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.uploader-text {
+  background-color: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: #007aff;
+  padding: 10rpx 40rpx;
+ line-height: 56rpx;
+}
+
+.uploader-container {
+  background-color: #fff;
+  padding-left: 40rpx;
+}
+
+.img-cnt{
+   border-top: 1px solid rgba(0, 0, 0, 0.1);
+   padding: 10rpx 0;
+}
+
+.uploader-image {
+  width: 670rpx;
+  height: 425rpx;
+  margin: auto;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.form-submit {
+  margin: 40rpx 80rpx;
+  background-color: #1296db;
+  color: #fff;
+}
