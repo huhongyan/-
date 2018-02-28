@@ -25,6 +25,8 @@ var config = {
 
         // 新增一条账单流水
         accountUrl: `${host}/weapp/account`,
+
+        wishUrl: `${host}/weapp/wish`,
     }
 };
 

@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // imgUrl: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1518530090321&di=e06b698b1e47ad9819801990768035a0&imgtype=0&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fzhidao%2Fwh%253D450%252C600%2Fsign%3D3de411617dcb0a468577833d5e53da12%2F0b55b319ebc4b74572be448dc9fc1e178a821506.jpg',
+    imgUrl: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1519800050831&di=53a798c50515107ee4bc6b9520964fe6&imgtype=0&src=http%3A%2F%2Ffile26.mafengwo.net%2FM00%2FD5%2FD3%2FwKgB4lJisf6AU9YdAAf9BLcbt7A48.groupinfo.w600.jpeg',
   },
 
   /**
@@ -19,8 +19,36 @@ Page({
 
   },
 
-  formsubmit() {
+  formsubmit(e) {
+    let params = e.detail.value,
+      title = params.title,
+      total = params.total;
+    if (!title)
+      return util.showModel('操作失败', '请输入心愿卡标题！')
 
+    if (total && total.match(/(^[1-9]([0-9]+)?(\.[0-9]{1,2})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)/)) {
+      wx.showToast({
+        title: '正在保存',
+        icon: 'loading',
+        mask: true
+      });
+      params['imgUrl'] = this.data.imgUrl
+      qcloud.request({
+        url: `${config.service.wishUrl}/add`,
+        login: true,
+        method: "POST",
+        data: params,
+        success(result) {
+          if (result.data.code != 1) return util.showModel('操作失败', result)
+          util.showSuccess('保存成功!');
+          wx.navigateBack(1)
+        },
+        fail(error) {
+          util.showModel('操作失败', error)
+        }
+      })
+    } else
+      util.showModel('操作失败', '请输入正确的金额！')
   },
 
   // 上传图片接口

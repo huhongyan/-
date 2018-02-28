@@ -38,4 +38,7 @@ router.post('/account/getList', validationMiddleware, controllers.account.getLis
 router.post('/account/getAccount', validationMiddleware, controllers.account.getTotal)
 router.post('/account/getCategorys', controllers.account.getCategorys)
 
+router.post('/wish/add', validationMiddleware, controllers.wish.add)
+router.post('/wish/getList', validationMiddleware, controllers.wish.getList)
+
 module.exports = router

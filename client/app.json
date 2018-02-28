@@ -1,9 +1,8 @@
 {
   "pages": [
-
-    "pages/addWish/addWish",
-        "pages/wish/wish",
     "pages/account/account",
+    "pages/wish/wish",
+    "pages/addWish/addWish",
     "pages/addAccount/addAccount",
     "pages/listAccount/listAccount"
   ],

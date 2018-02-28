@@ -1,5 +1,5 @@
 <view class="c-card">
-  <view class='card-bg' style="background-image: url({{card.imgUrl}}"></view>
+  <view class='card-bg' style="background-image: url({{card.imgUrl}})"></view>
   <view class='card-cnt'>
     <view class='cnt-header'>
       <view class='card-title'>{{card.title}}</view>
