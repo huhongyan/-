@@ -7,9 +7,8 @@
   display: block;
   width: 670rpx;
   height: 425rpx;
-  margin: 20rpx auto;
-  border-radius: 20rpx;
-  overflow: hidden;
+  margin: 30rpx auto;
+  
 }
 
 .add-wish {

@@ -1,11 +1,11 @@
-<view class="c-card">
-  <view class='card-bg' style="background-image: url({{card.imgUrl}})"></view>
+<navigator url="../recharge/recharge?id={{card.id}}" class="c-card">
+  <view class='card-bg' style="{{card.imgUrl ? 'background-image: url('+ card.imgUrl + ')' : ''}}"></view>
   <view class='card-cnt'>
     <view class='cnt-header'>
       <view class='card-title'>{{card.title}}</view>
       <view>{{card.account}}/{{card.total}}</view>
     </view>
-    <progress percent="{{(card.account/card.total)*100}}" active active-mode="forwards" />
+    <progress percent="{{(card.account/card.total)*100}}" backgroundColor="rgba(0,0,0,.15)" active active-mode="forwards" />
     <view class='card-desc'>{{card.describe}}</view>
   </view>
-</view>
+</navigator>

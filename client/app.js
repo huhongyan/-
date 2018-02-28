@@ -5,7 +5,8 @@ var util = require('./utils/util.js')
 
 App({
   globalData: {
-    userInfo: null
+    userInfo: null,
+    usable: 0
   },
   /**
    * 用户登录(调出授权弹框)

@@ -2,6 +2,9 @@
   height: 100%;
   width: 100%;
   position: relative;
+  border-radius: 20rpx;
+  box-shadow: 0 1rpx 2rpx 2rpx rgba(0, 0, 0, 0.15);
+  overflow: hidden;
 }
 
 .card-bg {
@@ -12,7 +15,8 @@
   right: 0;
   background: #63b8ff no-repeat center;
   background-size: cover;
-  filter: blur(8rpx);
+  filter: opacity(50%);
+  /* filter: blur(8rpx); */
 }
 
 .card-cnt {
@@ -34,7 +38,7 @@
   flex: 1;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space:nowrap; 
+  white-space: nowrap;
   font-size: 40rpx;
 }
 

@@ -15,11 +15,11 @@
   <view class='c-content'>
     <view class='account-tab'>
       <view class='txt-p tab-item icon-balance'>
-        <text class='p-item fc-gray'>可用金额（未关联心愿卡的金额）</text>
+        <text class='p-item fc-gray'>可用金额</text>
         <text class='p-item fs-16'>{{util.formatMoney(account)}}</text>
       </view>
     </view>
-    <navigator class='account-tab' hover-class="none" url='../listAccount/listAccount'>
+    <navigator class='account-tab' hover-class="none" url='../listAccount/listAccount' style='margin-bottom:1rpx;'>
       <view class='txt-p tab-item icon-income'>
         <text class='p-item fc-gray'>本月收入</text>
         <text class='p-item fs-16'>{{util.formatMoney(income)}}</text>
@@ -27,6 +27,12 @@
        <view class='txt-p tab-item icon-defray'>
         <text class='p-item fc-gray'>本月支出</text>
         <text class='p-item fs-16'>{{util.formatMoney(defray)}}</text>
+      </view>
+    </navigator>
+    <navigator class='account-tab' hover-class="none" url='../wish/wish'>
+      <view class='txt-p tab-item icon-wish'>
+        <text class='p-item fc-gray'>心愿卡</text>
+        <text class='p-item'>您有 <text class='fs-16'>{{amount}}</text> 张心愿卡</text>
       </view>
     </navigator>
   </view>

@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/account/account",
-    "pages/wish/wish",
+  "pages/account/account",
+        "pages/wish/wish",
+ 
+    "pages/recharge/recharge",
     "pages/addWish/addWish",
     "pages/addAccount/addAccount",
     "pages/listAccount/listAccount"
@@ -12,26 +14,6 @@
     "navigationBarBackgroundColor": "#1296db",
     "navigationBarTitleText": "歆远心愿",
     "navigationBarTextStyle": "white"
-  },
-  "tabBar": {
-    "position": "bottom",
-    "backgroundColor": "#FFF",
-    "color": "#2c2c2c",
-    "selectedColor": "#1296db",
-    "list": [
-      {
-        "pagePath": "pages/account/account",
-        "text": "账册",
-        "iconPath": "assets/book.png",
-        "selectedIconPath": "assets/book_sel.png"
-      },
-      {
-        "pagePath": "pages/wish/wish",
-        "text": "心愿卡",
-        "iconPath": "assets/card.png",
-        "selectedIconPath": "assets/card_sel.png"
-      }
-    ]
   },
   "networkTimeout": {
     "request": 10000,
