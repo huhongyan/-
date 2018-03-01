@@ -49,7 +49,7 @@ Page({
         success(result) {
           if (result.data.code != 1) return util.showModel('操作失败', result)
           util.showSuccess('保存成功!');
-          wx.navigateTo({
+          wx.redirectTo({
             url: '../listAccount/listAccount',
           })
         },

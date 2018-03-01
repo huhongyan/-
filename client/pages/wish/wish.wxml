@@ -1,4 +1,4 @@
 <scroll-view class="card-list" scroll-y>
-  <card class="card-item" wx:for="{{cards}}" wx:key="id" wx:for-item="card" card="{{card}}" />
+  <card class="card-item" wx:for="{{cards}}" wx:key="id" wx:for-item="card" card="{{card}}" usable="{{usable}}" bindrefreshlist="refreshList"/>
+  <navigator url="../addWish/addWish" open-type="navigate" class="icon-add card-item add-wish"></navigator>
 </scroll-view>
-<navigator url="../addWish/addWish" open-type="navigate" class="icon-add add-wish"></navigator>

@@ -42,5 +42,8 @@ router.post('/wish/add', validationMiddleware, controllers.wish.add)
 router.post('/wish/getList', validationMiddleware, controllers.wish.getList)
 router.post('/wish/getWish', controllers.wish.getWish)
 router.post('/wish/getAmount', validationMiddleware, controllers.wish.getAmount)
+router.post('/wish/updateAccount', controllers.wish.updateAccount)
+router.post('/wish/close', validationMiddleware, controllers.wish.close)
+router.post('/wish/delWish', controllers.wish.delWish)
 
 module.exports = router

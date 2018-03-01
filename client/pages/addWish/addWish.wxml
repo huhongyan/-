@@ -3,7 +3,7 @@
   <form class='wish-form' bindsubmit='formsubmit'>
     <view class="section">
       <view class='s-title'>标题*</view>
-      <input name="title" type='digit' placeholder="心愿标题" maxlength="11" />
+      <input name="title" placeholder="心愿标题" maxlength="11" />
     </view>
     <view class="section">
       <view class='s-title'>所需金额*</view>

@@ -8,15 +8,12 @@
   width: 670rpx;
   height: 425rpx;
   margin: 30rpx auto;
-  
 }
 
 .add-wish {
-  position: fixed;
-  bottom: 20rpx;
-  right: 40rpx;
-  height: 120rpx;
-  width: 120rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 1rpx 2rpx 2rpx rgba(0, 0, 0, 0.15);
+  background-color: #63b8ff;
+  background-size: 128rpx;
   background-position: center;
-  background-size: cover;
 }

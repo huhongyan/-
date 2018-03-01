@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrl: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1519800050831&di=53a798c50515107ee4bc6b9520964fe6&imgtype=0&src=http%3A%2F%2Ffile26.mafengwo.net%2FM00%2FD5%2FD3%2FwKgB4lJisf6AU9YdAAf9BLcbt7A48.groupinfo.w600.jpeg',
+    imgUrl: '',
   },
 
   /**
@@ -41,7 +41,10 @@ Page({
         success(result) {
           if (result.data.code != 1) return util.showModel('操作失败', result)
           util.showSuccess('保存成功!');
-          wx.navigateBack(1)
+          // wx.navigateBack(1)
+          wx.redirectTo({
+            url: '../wish/wish'
+          })
         },
         fail(error) {
           util.showModel('操作失败', error)

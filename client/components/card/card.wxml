@@ -1,11 +1,39 @@
-<navigator url="../recharge/recharge?id={{card.id}}" class="c-card">
+<wxs module="util" src="../../util.wxs"></wxs>
+<view class="c-card">
   <view class='card-bg' style="{{card.imgUrl ? 'background-image: url('+ card.imgUrl + ')' : ''}}"></view>
-  <view class='card-cnt'>
+  <view class='card-cnt' style='display: {{isEdit?"none":"flex"}}'>
     <view class='cnt-header'>
       <view class='card-title'>{{card.title}}</view>
       <view>{{card.account}}/{{card.total}}</view>
+      <navigator url="../recharge/recharge?id={{card.id}}"></navigator>
     </view>
     <progress percent="{{(card.account/card.total)*100}}" backgroundColor="rgba(0,0,0,.15)" active active-mode="forwards" />
     <view class='card-desc'>{{card.describe}}</view>
+    <view class='card-btns'>
+      <button class='btn-item fc-blue' wx:if='{{card.account != card.total}}' bindtap='changeAccount'>管理资金</button>
+      <button class='btn-item fc-green' wx:else bindtap='closeCard'>完成</button>
+      <button class='icon-del' bindtap='delCard'></button>
+    </view>
   </view>
-</navigator>
+  <form bindsubmit='sliderAchange'>
+    <view class='card-cnt' style='display: {{isEdit?"flex":"none"}};   background-color: rgba(255, 255, 255, 0.75);'>
+      <radio-group class='form-switch' name="type" bindchange="switchTypeChange">
+        <label class='{{!!type ? "form-switch-checked" : ""}}'>
+          <radio value='1' checked/>注入</label>
+        <label class='{{!type ? "form-switch-checked" : ""}}'>
+          <radio value='0' />支取</label>
+      </radio-group>
+      <view class='form-card'>
+        <input name="account" type='digit' placeholder="0.00" maxlength="11" placeholder="最大可输入 {{!!type ? util.min(need, usable) : card.account}}" />
+      </view>
+      <view style='padding-left: 20rpx; font-size: 24rpx; color: #4A4A4A'>
+        <text wx:if="{{!!type}}">可支配金额 {{usable}} 元<text style='margin-left: 40rpx;'>还需资金 {{need}} 元</text></text>
+        <text wx:else>可提取金额 {{card.account}} 元</text>
+      </view>
+      <view class='card-btns' style='border-top: 1rpx solid rgba(0,0,0,.15); '>
+        <button class='btn-item' bindtap='cancelChange' style='color: #333'>取消</button>
+        <button class='btn-blue btn-item' formType="submit">确定</button>
+      </view>
+    </view>
+  </form>
+</view>

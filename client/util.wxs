@@ -9,7 +9,12 @@ var formatMoney = function(s){
   return t.split("").reverse().join("") + "." + r; 
 }
 
+var min = function(x, y){
+  return Math.min(x, y)
+}
+
 
 module.exports = {
-  formatMoney: formatMoney
+  formatMoney: formatMoney,
+  min: min
 };

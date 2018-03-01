@@ -19,7 +19,7 @@ async function add(ctx, next) {
       account = Number(params['account']) || 0;
 
     await mysql.transaction(function (trx) {
-      mysql('cCensusAccount').transacting(trx).select('id', 'account', 'income', 'defray').where({ year, month })
+      mysql('cCensusAccount').transacting(trx).select('id', 'account', 'income', 'defray').where({ year, month, 'open_id': openId })
         .then(([resp]) => {
           // 如果没有数据
           if (!resp) return mysql('cCensusAccount').transacting(trx).insert({
@@ -89,20 +89,25 @@ async function getTotal(ctx, next) {
 
   if (openId) {
     await Promise.all([
-      mysql('cCensusAccount').select('income', 'defray').where({ year, month }),
-      mysql('cCensusAccount').select('account'),
-    ]).then(([[{ income, defray }], list]) => {
-
-      let _account = 0;
+      mysql('cCensusAccount').select('income', 'defray').where({ year, month, 'open_id': openId }),
+      mysql('cCensusAccount').select('account').where({'open_id': openId}),
+      mysql('cWish').select('account').where({ 'open_id': openId, isCompleted: false })
+    ]).then(([[{ income = 0, defray = 0 } = {}], list, wList]) => {
+      let _account = 0, _total = 0;
       if (list instanceof Array) {
         list.forEach(({ account }) => {
-          _account = Math.round(_account * 100 + account * 100)/100
+          _total = Math.round(_total * 100 + account * 100)/100
+        })
+      }
+      if (wList instanceof Array) {
+        wList.forEach(({ account }) => {
+          _account = Math.round(_account * 100 + account * 100) / 100
         })
       }
       ctx.state.code = 1;
       ctx.state.data = {
-        account: _account,
-        total: _account,
+        account: Math.round(_total * 100 - _account * 100)/100,
+        total: _total,
         income,
         defray
       };
@@ -135,7 +140,7 @@ async function getList(ctx, next) {
       month = date.getMonth()
     }
 
-    let census = await mysql('cCensusAccount').select('id', 'account', 'income', 'defray').where({ year, month }).orderBy('create_time'),
+    let census = await mysql('cCensusAccount').select('id', 'account', 'income', 'defray').where({ year, month, 'open_id': openId }).orderBy('create_time'),
       data = {
         list: [],
         total: 0,

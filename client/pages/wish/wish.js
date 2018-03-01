@@ -6,9 +6,13 @@ const app = getApp();
 
 Page({
   data: {
-    cards: []
+    cards: [],
+    usable: 0
   },
   onLoad: function () {
+    this.refreshList()
+  },
+  refreshList(){
     wx.showToast({ title: '正在加载', icon: 'loading' })
     var that = this;
     qcloud.request({
@@ -18,12 +22,15 @@ Page({
       success(result) {
         if (result.data.code != 1) return util.showModel('查询失败', result);
 
-        that.setData({cards: result.data.data});
+        that.setData({ cards: result.data.data, usable: app.globalData.usable });
         wx.hideLoading()
       },
       fail(error) {
         util.showModel('查询失败', error)
       }
     })
+  },
+  onShow(){
+
   }
 })

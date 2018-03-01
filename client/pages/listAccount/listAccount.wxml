@@ -37,13 +37,13 @@
             {{item.category}}
           </view>
           <view class='item-30'>
-            {{item.type == 1 ? '' : '-'}}{{util.formatMoney(item.account)}}
+            {{item.type == 1 ? '' : '- '}}{{util.formatMoney(item.account)}}
           </view>
           <view class='item-40'>
             {{item.date}}
           </view>
         </view>
-        <view class='item-des'>{{item.describe}}</view>
+        <view wx:if='{{item.describe}}' class='item-des'>{{item.describe}}</view>
       </view>
     </block>
   </scroll-view>

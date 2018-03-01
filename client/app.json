@@ -1,10 +1,9 @@
 {
   "pages": [
-  "pages/account/account",
-        "pages/wish/wish",
- 
-    "pages/recharge/recharge",
+    "pages/account/account",
+    "pages/wish/wish",
     "pages/addWish/addWish",
+
     "pages/addAccount/addAccount",
     "pages/listAccount/listAccount"
   ],
