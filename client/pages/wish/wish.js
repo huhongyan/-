@@ -10,7 +10,7 @@ Page({
     usable: 0
   },
   onLoad: function () {
-    this.refreshList()
+    
   },
   refreshList(){
     wx.showToast({ title: '正在加载', icon: 'loading' })
@@ -31,6 +31,6 @@ Page({
     })
   },
   onShow(){
-
+    this.refreshList()
   }
 })

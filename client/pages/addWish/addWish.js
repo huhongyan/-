@@ -41,10 +41,7 @@ Page({
         success(result) {
           if (result.data.code != 1) return util.showModel('操作失败', result)
           util.showSuccess('保存成功!');
-          // wx.navigateBack(1)
-          wx.redirectTo({
-            url: '../wish/wish'
-          })
+          wx.navigateBack(1)
         },
         fail(error) {
           util.showModel('操作失败', error)
@@ -72,7 +69,6 @@ Page({
           filePath: filePath,
           name: 'file',
           success: function (res) {
-            debugger
             util.showSuccess('上传图片成功')
             res = JSON.parse(res.data)
             that.setData({
